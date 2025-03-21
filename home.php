@@ -193,41 +193,32 @@ Join us in this exciting new journey and stay tuned for exclusive launch offers,
       <h1>WHAT OUR CUSTOMERS SAYS</h1>
       <div class="line"></div>
       <div class="testimonial-container">
-        <div class="testimonial-slide">
+      <div class="testimonial-slide">
           <div class="testimonial">
             <div class="testimonial-content">
-              
+
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Perferendis dolores ratione exercitationem laborum, aliquid
-                aspernatur, sint, officia deleniti quam voluptate iste itaque
-                blanditiis! Voluptates sint eveniet repudiandae qui aut quis.
+                FitZone has completely transformed my fitness journey!  The trainers are so supportive and knowledgeable. I've lost weight, gained strength, and feel amazing.  Definitely the best gym in Colombo!
               </p>
-              <h3>Avinash Kr</h3>
+              <h3>Dhanush Silva</h3>
             </div>
           </div>
           <div class="testimonial">
             <div class="testimonial-content">
-              
+
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Perferendis dolores ratione exercitationem laborum, aliquid
-                aspernatur, sint, officia deleniti quam voluptate iste itaque
-                blanditiis! Voluptates sint eveniet repudiandae qui aut quis.
+                I was hesitant to join a gym at first, but FitZone made me feel right at home.  The atmosphere is friendly and encouraging, and the classes are fantastic.  Highly recommend it to anyone in Kandy looking to get in shape!
               </p>
-              <h3>Bharat Kunal</h3>
+              <h3>Sithara Perera</h3>
             </div>
           </div>
           <div class="testimonial">
             <div class="testimonial-content">
-              
+
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Perferendis dolores ratione exercitationem laborum, aliquid
-                aspernatur, sint, officia deleniti quam voluptate iste itaque
-                blanditiis! Voluptates sint eveniet repudiandae qui aut quis.
+                After years of struggling with my weight, I finally found a program that works at FitZone. The personalized training and nutritional guidance have made all the difference. Feeling healthier and more confident than ever!
               </p>
-              <h3>Prabhakar D</h3>
+              <h3>Rajeev Kumar</h3>
             </div>
           </div>
         </div>
