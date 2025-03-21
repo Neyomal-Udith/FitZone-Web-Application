@@ -119,21 +119,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['update'])) {
 <body>
 
 <header id="top">
-    <img src="../img/samarasinghe logo.png" alt="" class="logo" />
-    <nav>
-        <ul class="nav_links">
+<img src="../img/FZ_logo01.png" alt="" class="logo" />
+<nav>
+    <ul class="nav_links">
         <li><a href="adminHome.php">Home</a></li>
-          <li><a href="uploadProduct.php">Products</a></li>
-          <li><a href="orders.php">Orders</a></li>
+          <li><a href="uploadProduct.php">Memberships</a></li>
+          <li><a href="orders.php">Pending Memberships</a></li>
           <li><a href="message.php">Messages</a></li>
           <li><a href="appointmentManage.php">Appointment</a></li>
-          <li><a href="staff.php">Staff</a></li>
+          
           <li><a href="customers.php">Customers</a></li>
           <li><a href="admin.php">Admin</a></li>
         </ul>
     </nav>
     <p>
-    <a href="Addpics.php" class="cta"><button>Web Content</button></a>
         <a href="../loginUI.php" class="logout-icon"
           ><i class="bx bxs-user-minus"></i
         ></a>

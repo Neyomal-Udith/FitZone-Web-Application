@@ -51,21 +51,21 @@ $totalSales = $totalSalesRow['total_sales'];
 <body>
 
 <header id="top">
-    <img src="../img/samarasinghe logo.png" alt="" class="logo" />
+    <img src="../img/FZ_logo01.png" alt="" class="logo" />
     <nav>
         <ul class="nav_links">
         <li><a href="adminHome.php">Home</a></li>
-          <li><a href="uploadProduct.php">Products</a></li>
-          <li><a href="orders.php">Orders</a></li>
+          <li><a href="uploadProduct.php">Memberships</a></li>
+          <li><a href="orders.php">Pending Memberships</a></li>
           <li><a href="message.php">Messages</a></li>
           <li><a href="appointmentManage.php">Appointment</a></li>
-          <li><a href="staff.php">Staff</a></li>
+          
           <li><a href="customers.php">Customers</a></li>
           <li><a href="admin.php">Admin</a></li>
         </ul>
     </nav>
     <p>
-        <a href="Addpics.php" class="cta"><button>Web Content</button></a>
+        
         <a href="../loginUI.php" class="logout-icon"
           ><i class="bx bxs-user-minus"></i
         ></a>
@@ -78,8 +78,8 @@ $totalSales = $totalSalesRow['total_sales'];
 <div class="admin-dashboard">
     <div class="dashboard-box">
         <i class="bx bxs-box bx-lg"></i>
-        <h3>Orders Ongoing</h3>
-        <p><?php echo $ongoingOrdersCount; ?> Orders in Progress</p>
+        <h3>Approved Memberships</h3>
+        <p><?php echo $ongoingOrdersCount; ?>  memberships</p>
     </div>
     <div class="dashboard-box">
         <i class="bx bxs-calendar-check bx-lg"></i>
@@ -102,7 +102,7 @@ $totalSales = $totalSalesRow['total_sales'];
 
 .welcome-container h2 {
     font-size: 32px;
-    color: #962932;
+    color: black;
     margin-bottom: 0px;
     font-weight: 800;
 }
@@ -117,7 +117,7 @@ $totalSales = $totalSalesRow['total_sales'];
 }
 
 .dashboard-box {
-    background: linear-gradient(135deg, #e63946, #f4a261);
+    background: linear-gradient(135deg, #da8d11,rgb(241, 171, 57));
     color: white;
     padding: 40px;
     border-radius: 20px;
@@ -150,7 +150,7 @@ $totalSales = $totalSalesRow['total_sales'];
     background-color: white;
     padding: 15px;
     border-radius: 50%;
-    color: #e63946;
+    color: #da8d11;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 

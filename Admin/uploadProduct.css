@@ -26,14 +26,14 @@ html {
     --other-color: #8e8e8e;
     --second-color: #1d1d1d;
     --brown-color: #bfa57d;
-    --darkred-color: #4d060c;
-    --lightred-color: #8f242d;
+    --darkred-color: #da8d11;
+    --lightred-color: #da8d11;
 }
 
 li, a, button {
     font-weight: 500;
     font-size: 18px;
-    color: #802a2a;
+    color: #da8d11;
 }
 
 header {
@@ -41,14 +41,14 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 5px 10%;
-    background-color: var(--bg--color);
+    background-color: black;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .logo {
-    width: 100px;
+    width: 200px;
     cursor: pointer;
 }
 
@@ -66,12 +66,12 @@ header {
 }
 
 .nav_links li a:hover {
-    color: var(--text-color);
+    color: #cf8d23;
 }
 
 button {
     padding: 9px 25px;
-    background-color: #8f242d;
+    background-color: #da8d11;
     border: none;
     border-radius: 15px;
     color: var(--bg--color);
@@ -80,14 +80,14 @@ button {
 }
 
 button:hover {
-    background-color: #4d060c;
+    background-color: #da8d11;
     color: var(--bg--color);
 }
 
 .logout-icon {
     margin-left: 15px;
-    color: #8f242d;
-    border: 1px solid #8f242d;
+    color: #da8d11;
+    border: 1px solid #da8d11;
     padding: 7px 10px;
     border-radius: 10px;
     transition: all 0.5s ease;
@@ -95,8 +95,8 @@ button:hover {
 
 .logout-icon:hover {
     color: white;
-    border: 1px solid white;
-    background-color: #8f242d;
+    
+    background-color: #da8d11;
     transition: all 0.5s ease;
 }
 
@@ -149,7 +149,7 @@ button:hover {
 .form-group button {
     width: 100%;
     padding: 10px;
-    background-color: #8f242d;
+    background-color: #da8d11;
     color: white;
     border: none;
     border-radius: 5px;
@@ -157,7 +157,7 @@ button:hover {
 }
 
 .form-group button:hover {
-    background-color: #822a31;
+    background-color: #da8d11;
 }
 
 /* table */
@@ -213,7 +213,7 @@ img {
 
 
 table a{
-        background-color: #8f242d;
+        background-color: #da8d11;
         color: white;
         border: none;
         padding: 9px 22px;
@@ -222,7 +222,7 @@ table a{
         transition: all 0.3s ease;
 }
 table a:hover{
-        background-color: #962932;
+        background-color: #da8d11;
         transition: all 0.3s ease;
       
 }
