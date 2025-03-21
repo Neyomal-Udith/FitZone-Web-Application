@@ -122,13 +122,13 @@ Join us in this exciting new journey and stay tuned for exclusive launch offers,
       <img src="img/ser01.png" alt="Eye Exam">
       <h3>Appoinment Booking</h3>
       <p>Book your one-on-one sessions with our certified personal trainers or wellness experts at your convenience.</p>
-      <a href="services.php">Learn More</a>
+      <a href="eyeExams.php">Learn More</a>
     </div>
     <div class="service">
       <img src="img/ser02.png" alt="Eye Exam">
       <h3>Membership Registration</h3>
       <p>Start your fitness journey by signing up for a customized membership plan that suits your lifestyle and goals. </p>
-      <a href="services.php">Learn More</a>
+      <a href="menuUI.php">Learn More</a>
     </div>
     <div class="service">
       <img src="img/ser03.png" alt="Contact Lenses">
