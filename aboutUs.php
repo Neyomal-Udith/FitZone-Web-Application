@@ -10,19 +10,19 @@ include("connect.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About us</title>
 
-    <!-- Box icons link -->
+    
     <link
       rel="stylesheet"
       href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
     />
 
-    <!-- Remix icon link -->
+   
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
 
-    <!-- Google fonts link -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -168,7 +168,7 @@ include("connect.php");
   </section>
 
 
- <!-- Why Choose Us Section -->
+
   <section class="why-choose-us">
   <div class="why-container">
     <div class="why-text">
@@ -219,7 +219,7 @@ include("connect.php");
         </div>
  </section>
 
-  <!-- footer section -->
+
   <footer class="footer-distributed">
       <div class="footer-left">
          <h2>FitZone</h2>

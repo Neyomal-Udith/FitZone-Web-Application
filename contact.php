@@ -1,29 +1,21 @@
 <?php
-// Include the database connection file
-require 'connect.php';  // Ensure this points to the correct path of your connect.php file
+require 'connect.php';  
 
-// Check if the request method is POST for the contact form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
     $name = $_POST['name'];
     $email = $_POST['email'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
 
-    // Prepare an SQL statement to insert the message into the database
     $stmt = $conn->prepare("INSERT INTO messages (name, email, subject, message) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssss", $name, $email, $subject, $message);
 
-    // Execute the statement and check for success
     if ($stmt->execute()) {
-        // If successful, display a success message
         echo "<script>alert('Message sent successfully');</script>";
     } else {
-        // If there is an error, display the error message
         echo "<script>alert('Error: " . $stmt->error . "');</script>";
     }
 
-    // Close the statement and connection
     $stmt->close();
 }
 ?>
@@ -34,22 +26,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
-    <!-- Custom CSS link -->
     <link rel="stylesheet" href="contact.css" />
 
-    <!-- Box icons link -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
     />
 
-    <!-- Remix icon link -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
 
-    <!-- Google fonts link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -64,7 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header.classList.toggle("sticky", window.scrollY > 0);
 })
     </script>
-    <!-- Header section -->
     <header id="top">
     <a href="home.php"><img src="img/FZ_logo01.png" alt="" class="logo" /></a>
       <nav>
@@ -84,12 +71,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </p>
     </header>
 
-    <!-- Hero section with title -->
     <section class="hero">
       <div class="hero-container"></div>
     </section>
 
-    <!-- Contact form section -->
     <div class="contact-form">
       <div class="contact-info">
         <h2>Get In Touch</h2>
@@ -117,14 +102,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
 
       <div class="contact-form-inner">
-        <!-- Contact form -->
         <form action="contact.php" method="post">
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Email" required />
             <input type="text" name="subject" placeholder="Subject" required />
             <textarea name="message" placeholder="Say Something" required></textarea>
             
-            <!-- Button Wrapper -->
             <div class="form-buttons">
                 <button type="submit">Send Message</button>
                 
@@ -135,7 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <!-- Footer section -->
     <footer class="footer-distributed">
       <div class="footer-left">
          <h2>FitZone</h2>

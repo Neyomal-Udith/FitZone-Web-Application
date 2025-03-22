@@ -7,14 +7,14 @@ if (isset($_POST['register'])) {
     $customerEmail = $_POST['customerEmail'];
     $customerContact = $_POST['customerContact'];
     $customerPass = $_POST['customerPass'];
-    $customerPass = md5($customerPass);  // Hash the password
+    // $customerPass = md5($customerPass);  // Hash the password
 
-    // Check if the email already exists in the database
+    //  if the email already exists 
     $checkEmail = "SELECT * FROM customer WHERE CustomerEmail = '$customerEmail'";
     $result = $conn->query($checkEmail);
     
     if ($result->num_rows > 0) {
-        // Email already exists
+        
         header("Location: registerUI.php?error=Email Address Already Exists!");
     } else {
 

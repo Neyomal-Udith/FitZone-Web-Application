@@ -225,17 +225,6 @@ Join us in this exciting new journey and stay tuned for exclusive launch offers,
       </div>
     </section>
 
-    <!-- <section class="contact block">
-   <h2>GET IN TOUCH</h2>
-   <div class="line"></div>
-   <form action="contact_form.php" method="post">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-   </form>
-</section> -->
-
 
 
     <footer class="footer-distributed">

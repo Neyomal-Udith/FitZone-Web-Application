@@ -2,7 +2,7 @@
 include 'connect.php';
 session_start();
 
-// Enable error reporting for debugging
+// Enable error handling
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
@@ -22,27 +22,12 @@ if (isset($_POST['submit'])) {
         if (password_verify($customerPass, $row['AdminPassword']) || $customerPass == $row['AdminPassword']) {
             // Verify either using hashed password or plain text
             $_SESSION['AdminEmail'] = $row['AdminEmail']; // Store admin email in session
-            header("Location: Admin/adminHome.php"); // Redirect to admin page
+            header("Location: Admin/adminHome.php"); 
             exit();
         }
     }
 
-    // Check if the login credentials are for the staff
-    $staffSql = "SELECT * FROM staff WHERE StaffEmail = ?";
-    $staffStmt = $conn->prepare($staffSql);
-    $staffStmt->bind_param("s", $customerEmail);
-    $staffStmt->execute();
-    $staffResult = $staffStmt->get_result();
-
-    if ($staffResult->num_rows > 0) {
-        $row = $staffResult->fetch_assoc();
-        if (password_verify($customerPass, $row['StaffPassword']) || $customerPass == $row['StaffPassword']) {
-            // Verify either using hashed password or plain text
-            $_SESSION['StaffEmail'] = $row['StaffEmail']; // Store staff email in session
-            header("Location: staff/staffHome.php"); // Redirect to staff home page
-            exit();
-        }
-    }
+    
 
     // Check if the login credentials are for the customer
     $customerSql = "SELECT * FROM customer WHERE CustomerEmail = ?";
@@ -61,7 +46,6 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    // Invalid credentials for all types of users
     header("Location: loginUI.php?error=Incorrect Email or Password!");
     exit();
 }

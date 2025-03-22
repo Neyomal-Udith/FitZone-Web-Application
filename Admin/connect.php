@@ -3,7 +3,7 @@
 $host = "localhost"; // Host name
 $user = "root"; // Username
 $pass = ""; // Password
-$db = "samarasinghe"; // Database name
+$db = "fitzone"; // Database name
 
 // Create a new MySQLi connection
 $conn = new mysqli($host, $user, $pass, $db);

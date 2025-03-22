@@ -1,69 +1,54 @@
-// This function handles the filtering of products by category
 function filterMenu() {
   const category = document.getElementById("cuisine_filter").value;
-
-  // Loop through product boxes and show/hide based on category
   const productBoxes = document.getElementsByClassName("product-box");
   for (let i = 0; i < productBoxes.length; i++) {
     const productCategory = productBoxes[i].getAttribute("data-category");
-
     if (category === "all" || category === productCategory) {
-      productBoxes[i].style.display = "block"; // Show product
+      productBoxes[i].style.display = "block";
     } else {
-      productBoxes[i].style.display = "none"; // Hide product
+      productBoxes[i].style.display = "none";
     }
   }
 }
 
-// This function handles the search functionality by product name
 function filterProductsBySearch() {
   const searchInput = document.getElementById("productSearch").value.toLowerCase();
   const productBoxes = document.getElementsByClassName("product-box");
-
   for (let i = 0; i < productBoxes.length; i++) {
     const productName = productBoxes[i].getAttribute("data-name");
-
     if (productName.includes(searchInput)) {
-      productBoxes[i].style.display = "block"; // Show product
+      productBoxes[i].style.display = "block";
     } else {
-      productBoxes[i].style.display = "none"; // Hide product
+      productBoxes[i].style.display = "none";
     }
   }
 }
 
-// Event listener for the cart icon to open the cart
 document.querySelector("#cart-icon").addEventListener("click", function () {
   document.querySelector(".cart").classList.add("active");
 });
 
-// Event listener for the close button inside the cart
 document.querySelector("#close-cart").addEventListener("click", function () {
   document.querySelector(".cart").classList.remove("active");
 });
 
-// Function to initialize cart and other interactions when DOM is ready
 if (document.readyState == "loading") {
   document.addEventListener("DOMContentLoaded", ready);
 } else {
   ready();
 }
 
-// This function is called when the document is ready
 function ready() {
   var removeCartButtons = document.getElementsByClassName("cart-remove");
   for (var i = 0; i < removeCartButtons.length; i++) {
     var button = removeCartButtons[i];
     button.addEventListener("click", removeCartItem);
   }
-
-  // Handle quantity changes in the cart
   var quantityInputs = document.getElementsByClassName("cart-quantity");
   for (var i = 0; i < quantityInputs.length; i++) {
     var input = quantityInputs[i];
     input.addEventListener("change", quantityChanged);
   }
-
-  // Add to cart buttons
   var addCart = document.getElementsByClassName("add-cart");
   for (var i = 0; i < addCart.length; i++) {
     var button = addCart[i];
@@ -71,7 +56,6 @@ function ready() {
   }
 }
 
-// Function to remove item from cart
 function removeCartItem(event) {
   var buttonClicked = event.target;
   buttonClicked.parentElement.remove();
@@ -79,19 +63,17 @@ function removeCartItem(event) {
   updateCartCount();
 }
 
-// Function to handle quantity changes in the cart
 function quantityChanged(event) {
   var input = event.target;
   if (isNaN(input.value) || input.value <= 0) {
     input.value = 1;
-  } else if (input.value > 1) { // Add this condition
+  } else if (input.value > 1) {
     input.value = 1;
   }
   updateTotal();
   updateCartCount();
 }
 
-// Function to handle adding a product to the cart
 function addCartClicked(event) {
   var button = event.target;
   var shopProducts = button.parentElement;
@@ -103,7 +85,6 @@ function addCartClicked(event) {
   updateCartCount();
 }
 
-// Function to add a product to the cart with the product details
 function addProductToCart(title, price, productImg) {
   var cartShopBox = document.createElement("div");
   cartShopBox.classList.add("cart-box");
@@ -122,7 +103,6 @@ function addProductToCart(title, price, productImg) {
                   <div class="cart-price">${price}</div>
                   <input type="number" value="1" class="cart-quantity" />
                 </div>
-                <!-- remove cart -->
                 <i class="ri-delete-bin-5-line cart-remove"></i>`;
   cartShopBox.innerHTML = cartBoxContent;
   cartItems.append(cartShopBox);
@@ -134,7 +114,6 @@ function addProductToCart(title, price, productImg) {
     .addEventListener("change", quantityChanged);
 }
 
-// Function to update the total price in the cart
 function updateTotal() {
   var cartContent = document.getElementsByClassName("cart-content")[0];
   var cartBoxes = cartContent.getElementsByClassName("cart-box");
@@ -151,7 +130,6 @@ function updateTotal() {
   document.getElementsByClassName("total-price")[0].innerText = "Rs" + total;
 }
 
-// Function to update the cart count
 function updateCartCount() {
   var cartContent = document.getElementsByClassName("cart-content")[0];
   var cartBoxes = cartContent.getElementsByClassName("cart-box");
@@ -163,7 +141,6 @@ function updateCartCount() {
   document.querySelector(".cart-count").innerText = totalItems;
 }
 
-// Ensure that the product titles are saved when checking out
 document
   .getElementsByClassName("btn-buy")[0]
   .addEventListener("click", buyButtonClicked);
@@ -177,8 +154,7 @@ function buyButtonClicked() {
   if (total === 0) {
     alert("No Items in the Cart");
   } else {
-    localStorage.setItem("totalPrice", total); // Store total price in local storage
-
+    localStorage.setItem("totalPrice", total);
     var cartBoxes = document.getElementsByClassName("cart-box");
     var productTitles = [];
     for (var i = 0; i < cartBoxes.length; i++) {
@@ -186,8 +162,7 @@ function buyButtonClicked() {
         cartBoxes[i].getElementsByClassName("cart-product-title")[0].innerText;
       productTitles.push(title);
     }
-    localStorage.setItem("productTitles", JSON.stringify(productTitles)); // Store product titles in local storage
-
-    window.location.href = "checkout.php"; // Redirect to checkout page
+    localStorage.setItem("productTitles", JSON.stringify(productTitles));
+    window.location.href = "checkout.php";
   }
 }

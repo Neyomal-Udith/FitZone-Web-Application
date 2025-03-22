@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// testimonial slide changing effect
+// testimonial slide 
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".testimonial");
   let currentIndex = 0;
@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(showNextTestimonial, 6000);
 
-  // Initialize the first slide
+ 
   slides[currentIndex].classList.add("active");
 });
 
-// hero section image slideshow
+
 let slideIndex = 0;
 function showSlides() {
   let slides = document.getElementsByClassName("mySlides");
@@ -57,12 +57,12 @@ function showSlides() {
     slideIndex = 1;
   }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 6000); // Change image every 6 seconds
+  setTimeout(showSlides, 6000); 
 }
 
 showSlides();
 
-//service section animation
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const services = document.querySelectorAll(".service");
@@ -80,6 +80,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", onScroll);
 
-  // Trigger scroll event on load to handle cases where elements are already in view
   onScroll();
 });

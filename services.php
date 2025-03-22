@@ -10,22 +10,18 @@ include("connect.php");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services</title>
-    <!-- Custom CSS link -->
     <link rel="stylesheet" href="services.css" />
 
-    <!-- Box icons link -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
     />
 
-    <!-- Remix icon link -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
 
-    <!-- Google fonts link -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -350,7 +346,7 @@ include("connect.php");
       </div>
     </footer>
 
-    <script src="services.js"></script>
+ 
 
   </body>
 </html>

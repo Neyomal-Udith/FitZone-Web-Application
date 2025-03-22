@@ -1,9 +1,9 @@
 <?php
-// Database connection details
+
 $host = "localhost"; 
 $user = "root"; 
 $pass = ""; 
-$db = "samarasinghe"; 
+$db = "fitzone"; 
 
 
 $conn = new mysqli($host, $user, $pass, $db);

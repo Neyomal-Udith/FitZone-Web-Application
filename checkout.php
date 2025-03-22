@@ -1,42 +1,41 @@
 <?php
 session_start();
 
-// Include the database connection
+// db onnection
 include 'connect.php';
 
-// Check if the customer is logged in
+
 if (isset($_SESSION['CustomerEmail'])) {
-    $customerEmail = $_SESSION['CustomerEmail']; // Retrieve stored customer email
+    $customerEmail = $_SESSION['CustomerEmail']; 
 } else {
-    // Redirect to login page if not logged in
+    
     header("Location: loginUI.php");
     exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve form data
+  
     $email = $_POST['email'];
     $name = $_POST['name'];
     $contact = $_POST['contact'];
     $address = $_POST['address'];
     $postal = $_POST['postal'];
     $totalPrice = $_POST['total_price'];
-    $productTitles = $_POST['product_titles']; // Retrieve product titles
-    $proof = $_FILES['proof']['name']; // Get the file name of the proof of payment
+    $productTitles = $_POST['product_titles']; 
+    $proof = $_FILES['proof']['name']; 
 
-    // Check if email exists in the customer table
+    // Check if email exists 
     $emailCheckQuery = "SELECT * FROM customer WHERE CustomerEmail = '$email'";
     $result = $conn->query($emailCheckQuery);
 
     if ($result->num_rows > 0) {
-        // Email exists, proceed with the order placement
+       
 
-        // Upload the proof of payment
+     
         $targetDir = "uploads/";
         $targetFile = $targetDir . basename($proof);
         move_uploaded_file($_FILES['proof']['tmp_name'], $targetFile);
 
-        // Insert data into the orders table
         $sql = "INSERT INTO orders (Email, Name, Contact, `Delivery address`, Postal, TotalPrice, Proof, Status)
                 VALUES ('$email', '$productTitles', '$contact', '$address', '$postal', '$totalPrice', '$proof', 'Pending')";
 
@@ -46,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
     } else {
-        // Email does not exist, show alert
         echo "<script>alert('Please enter registered email or log in');</script>";
     }
 

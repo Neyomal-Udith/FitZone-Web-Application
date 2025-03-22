@@ -3,20 +3,17 @@ include("connect.php");
 
 $success_message = "";
 
-// Check if we're submitting or updating admin data
 if (isset($_POST['submit']) || isset($_POST['update'])) {
     $admin_email = $_POST['email'];
     $admin_password = $_POST['password'];
 
     if (isset($_POST['admin_id']) && $_POST['admin_id'] != "") {
-        // Update admin data
         $admin_id = $_POST['admin_id'];
         $updateQuery = "UPDATE admin SET AdminEmail='$admin_email', AdminPassword='$admin_password' WHERE AdminID=$admin_id";
         if ($conn->query($updateQuery) === TRUE) {
             $success_message = "Admin updated successfully!";
         }
     } else {
-        // Insert new admin data
         $insertQuery = "INSERT INTO admin (AdminEmail, AdminPassword) VALUES ('$admin_email', '$admin_password')";
         if ($conn->query($insertQuery) === TRUE) {
             $success_message = "Admin added successfully!";
@@ -24,7 +21,6 @@ if (isset($_POST['submit']) || isset($_POST['update'])) {
     }
 }
 
-// fetch the admin data to pre-fill the form
 $admin_to_edit = null;
 if (isset($_GET['edit_id'])) {
     $edit_id = $_GET['edit_id'];
@@ -32,7 +28,6 @@ if (isset($_GET['edit_id'])) {
     $admin_to_edit = $result->fetch_assoc();
 }
 
-// delete the selected admin
 if (isset($_GET['delete_id'])) {
     $delete_id = $_GET['delete_id'];
     $deleteQuery = "DELETE FROM admin WHERE AdminID=$delete_id";

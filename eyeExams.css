@@ -23,7 +23,6 @@ html {
 }
 
 body {
-  /* background-color: var(--bg--color); */
   background: linear-gradient(to bottom, #000000, #333333, #666666);
 }
 
@@ -40,7 +39,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 10%;
-  /* background-color: rgb(10, 10, 10); */
   background: transparent;
   position: absolute;
   top: 0;
@@ -49,17 +47,14 @@ header {
   z-index: 1000;
 }
 
-header.sticky{
+header.sticky {
   background-color: black;
   transition: all 0.3s ease;
   position: fixed;
-  
-  
 }
 
 .logo {
   width: 140px;
-  
   cursor: pointer;
 }
 
@@ -80,7 +75,6 @@ header.sticky{
   color: #ff9e00;
 }
 
-/* menu navigation */
 nav ul {
   list-style: none;
   padding: 0;
@@ -131,7 +125,7 @@ nav ul ul li a:hover {
 nav ul li:hover > ul {
   display: block;
 }
-/* ........ */
+
 button {
   padding: 9px 25px;
   background-color: #db8b0a;
@@ -143,9 +137,10 @@ button {
 }
 
 button:hover {
-  background-color:#ce850f;
+  background-color: #ce850f;
   color: var(--bg--color);
 }
+
 .logout-icon {
   margin-left: 15px;
   color: #db8b0a;
@@ -157,11 +152,10 @@ button:hover {
 
 .logout-icon:hover {
   color: white;
-  
   background-color: #db8b0a;
   transition: all 0.5s ease;
 }
-/* hero section */
+
 .hero {
   background: url(img/backg03.png);
   background-size: cover;
@@ -171,6 +165,7 @@ button:hover {
   margin-bottom: 20px;
   padding: 110px;
 }
+
 .title h1 {
   font-size: 3rem;
   color: var(--text-color);
@@ -178,17 +173,15 @@ button:hover {
   margin-bottom: 1rem;
 }
 
-/* Footer Section */
-
 .footer-distributed {
-  background-color: #000000; /* Updated background color */
+  background-color: #000000;
   box-sizing: border-box;
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
   padding: 50px 50px 60px 50px;
   margin-top: 30px;
-  color: #ffffff; /* Dark text color for contrast */
+  color: #ffffff;
 }
 
 .footer-distributed .footer-left,
@@ -197,8 +190,6 @@ button:hover {
   display: inline-block;
   vertical-align: top;
 }
-
-/* Footer left */
 
 .footer-distributed .logo {
   width: 150px;
@@ -210,10 +201,8 @@ button:hover {
   margin-right: 50px;
 }
 
-/* Footer links */
-
 .footer-distributed .footer-links {
-  color: #ffffff; /* Updated text color for contrast */
+  color: #ffffff;
   margin: 0px 0px 12px 100px;
 }
 
@@ -221,19 +210,17 @@ button:hover {
   display: inline-block;
   line-height: 1.8;
   text-decoration: none;
-  color: white; /* Matching text color */
+  color: white;
   transition: all 0.5s ease;
   font-weight: 300;
 }
 
 .footer-distributed .footer-company-name {
-  color: #ffffff; /* Lighter text color for subtle contrast */
+  color: #ffffff;
   font-size: 14px;
   font-weight: normal;
   margin-left: 100px;
 }
-
-/* Footer Center */
 
 .footer-distributed .footer-center {
   margin-left: 60px;
@@ -241,7 +228,7 @@ button:hover {
 }
 
 .footer-distributed h2 {
-  color: #db8b0a; /* Accent color to match the website's theme */
+  color: #db8b0a;
   margin-bottom: 0px;
   margin-left: 100px;
   font-size: 40px;
@@ -249,7 +236,7 @@ button:hover {
 }
 
 .footer-distributed h3 {
-  color: #db8b0a; /* Accent color */
+  color: #db8b0a;
   margin-bottom: 10px;
   margin-left: 200px;
   font-size: 20px;
@@ -257,7 +244,7 @@ button:hover {
 }
 
 .footer-distributed .footer-center i {
-  color: #db8b0a; /* Matching icon color */
+  color: #db8b0a;
   font-size: 20px;
   width: 38px;
   height: 38px;
@@ -276,14 +263,12 @@ button:hover {
 
 .footer-distributed .footer-center p {
   display: inline-block;
-  color: #cfcfcf; /* Matching text color */
+  color: #cfcfcf;
   vertical-align: middle;
   margin: 0;
   font-weight: 300;
   font-size: 16px;
 }
-
-/* Footer Right */
 
 .footer-distributed .footer-right {
   width: 30%;
@@ -291,7 +276,7 @@ button:hover {
 
 .footer-distributed .footer-company-about {
   line-height: 20px;
-  color: #ffffff; /* Matching text color */
+  color: #ffffff;
   font-size: 13px;
   font-weight: normal;
   margin: 0;
@@ -299,7 +284,7 @@ button:hover {
 
 .footer-distributed .footer-company-about span {
   display: block;
-  color: #ffffff; /* Accent color */
+  color: #ffffff;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -314,10 +299,10 @@ button:hover {
   width: 35px;
   height: 35px;
   cursor: pointer;
-  background-color: #db8b0a; /* Accent color for icons */
+  background-color: #db8b0a;
   border-radius: 2px;
   font-size: 20px;
-  color: #ffffff; /* White icon color for contrast */
+  color: #ffffff;
   text-align: center;
   line-height: 35px;
   margin-right: 3px;
@@ -326,33 +311,31 @@ button:hover {
 }
 
 .footer-distributed .footer-icons a:hover {
-  background-color: #c78110; /* Slightly lighter shade for hover effect */
+  background-color: #c78110;
 }
 
 .footer-links a:hover {
-  color: #db8b0a; /* Accent color on hover */
+  color: #db8b0a;
   transition: all 0.5s ease;
 }
-
-/* testimonial section */
 
 .testimonials {
   text-align: center;
   padding: 50px 0;
   background-color: #f5f5f5;
-  color: #333; /* Dark text color for readability */
+  color: #333;
   margin-top: 30px;
 }
 
 .testimonials h1 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #8f242d; /* Accent color to match the website's color scheme */
+  color: #8f242d;
 }
 
 .testimonials p {
   margin-bottom: 40px;
-  color: #666; /* Subtle gray color for the paragraph text */
+  color: #666;
 }
 
 .testimonial-container {
@@ -375,7 +358,7 @@ button:hover {
 }
 
 .testimonial-content {
-  background-color: #fff; /* White background for a clean look */
+  background-color: #fff;
   padding: 20px 100px;
   border-radius: 10px;
   text-align: center;
@@ -393,7 +376,7 @@ button:hover {
 .testimonial h3 {
   margin: 10px 0 5px;
   font-size: 1.2rem;
-  color: #8f242d; /* Matching with the accent color */
+  color: #8f242d;
 }
 
 .testimonial span {
@@ -404,13 +387,11 @@ button:hover {
 .line {
   width: 100px;
   height: 4px;
-  background: #8f242d; /* Accent color for the line */
+  background: #8f242d;
   margin: 10px auto;
   border-radius: 5px;
   margin-bottom: 40px;
 }
-
-/* new section */
 
 .sec1 {
   position: relative;
@@ -428,27 +409,30 @@ button:hover {
   align-items: center;
   flex-direction: column;
 }
+
 .main-title {
   font-size: 2rem;
   color: #db8b0a;
   text-align: center;
   margin-bottom: 1rem;
 }
+
 .container .line {
   width: 100px;
   height: 4px;
-  background: #db8b0a; /* Accent color for the line */
+  background: #db8b0a;
   margin: 5px auto;
   border-radius: 5px;
   margin-bottom: 50px;
 }
+
 .content {
   position: relative;
   width: 1150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 60px; /* Adding space between content blocks */
+  margin-bottom: 60px;
 }
 
 .content .image {
@@ -457,6 +441,7 @@ button:hover {
   height: 400px;
   overflow: hidden;
 }
+
 .content .image img {
   z-index: 111;
   position: absolute;
@@ -464,9 +449,10 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit:contain;
+  object-fit: contain;
   border-radius: 10px;
 }
+
 .content .text-box {
   z-index: 222;
   background: #db8b0a;
@@ -477,25 +463,21 @@ button:hover {
   border-radius: 10px;
   transform: translate(-80px, 50px);
 }
+
 .content .text-box h3 {
   font-size: 2em;
   margin-bottom: 10px;
 }
 
 .content.reverse .text-box {
-  transform: translate(
-    80px,
-    50px
-  ); /* Adjust the translation for reversed content */
+  transform: translate(80px, 50px);
 }
-
-/* Appoinment form */
 
 .appoint-form {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full page height */
+  height: 100vh;
 }
 
 .contact-container {
