@@ -14,19 +14,16 @@ if (isset($_POST['register'])) {
     $result = $conn->query($checkEmail);
     
     if ($result->num_rows > 0) {
-        
         header("Location: registerUI.php?error=Email Address Already Exists!");
     } else {
-
-       $sql = "INSERT INTO customer (CustomerName, CustomerEmail, CustomerContact, CustomerPassword) 
-        VALUES ('$customerName', '$customerEmail', '$customerContact', '$customerPass')";
+        $sql = "INSERT INTO customer (CustomerName, CustomerEmail, CustomerContact, CustomerPassword) 
+                VALUES ('$customerName', '$customerEmail', '$customerContact', '$customerPass')";
 
         if ($conn->query($sql) === TRUE) {
-           header("Location: loginUi.php");
+            header("Location: loginUI.php?success=Registration successful! Please log in.");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-
     }
 }
 

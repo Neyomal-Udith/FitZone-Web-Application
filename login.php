@@ -2,7 +2,6 @@
 include 'connect.php';
 session_start();
 
-// Enable error handling
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
@@ -10,7 +9,7 @@ if (isset($_POST['submit'])) {
     $customerEmail = $_POST['customerEmail'];
     $customerPass = $_POST['customerPass'];
 
-    // Check if the login credentials are for the admin
+    // Check admin login
     $adminSql = "SELECT * FROM admin WHERE AdminEmail = ?";
     $adminStmt = $conn->prepare($adminSql);
     $adminStmt->bind_param("s", $customerEmail);
@@ -20,16 +19,13 @@ if (isset($_POST['submit'])) {
     if ($adminResult->num_rows > 0) {
         $row = $adminResult->fetch_assoc();
         if (password_verify($customerPass, $row['AdminPassword']) || $customerPass == $row['AdminPassword']) {
-            // Verify either using hashed password or plain text
-            $_SESSION['AdminEmail'] = $row['AdminEmail']; // Store admin email in session
-            header("Location: Admin/adminHome.php"); 
+            $_SESSION['AdminEmail'] = $row['AdminEmail'];
+            header("Location: Admin/adminHome.php?success=Login successful");
             exit();
         }
     }
 
-    
-
-    // Check if the login credentials are for the customer
+    // Check customer login
     $customerSql = "SELECT * FROM customer WHERE CustomerEmail = ?";
     $customerStmt = $conn->prepare($customerSql);
     $customerStmt->bind_param("s", $customerEmail);
@@ -38,15 +34,14 @@ if (isset($_POST['submit'])) {
 
     if ($customerResult->num_rows > 0) {
         $row = $customerResult->fetch_assoc();
-        // Check for hashed or plain password
         if (password_verify($customerPass, $row['CustomerPassword']) || $customerPass == $row['CustomerPassword']) {
-            $_SESSION['CustomerEmail'] = $row['CustomerEmail']; // Store customer email in session
-            header("Location: home.php"); // Redirect to customer home page
+            $_SESSION['CustomerEmail'] = $row['CustomerEmail'];
+            header("Location: home.php?success=Login successful");
             exit();
         }
     }
 
-    header("Location: loginUI.php?error=Incorrect Email or Password!");
+    header("Location: loginUI.php?error=Login unsuccessful - please try again!");
     exit();
 }
 ?>

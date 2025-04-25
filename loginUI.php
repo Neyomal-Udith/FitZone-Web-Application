@@ -68,12 +68,21 @@
     </div>
 
     <script>
-      window.onload = function() {
+      window.onload = function () {
         var errorMessage = document.getElementById("errorMessage");
         if (errorMessage.innerHTML !== "") {
           errorMessage.style.display = "block";
         }
-      }
+
+        <?php
+        if (isset($_GET['success'])) {
+          echo "alert('" . htmlspecialchars($_GET['success']) . "');";
+        }
+        if (isset($_GET['error'])) {
+          echo "alert('" . htmlspecialchars($_GET['error']) . "');";
+        }
+        ?>
+      };
     </script>
   </body>
 </html>

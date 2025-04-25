@@ -94,7 +94,7 @@
 
         <div class="login-link">
           <p class="white-para">
-            Already have an account? <a href="loginUi.php">Login</a>
+            Already have an account? <a href="loginUI.php">Login</a>
           </p>
         </div>
       </form>
